@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1 class="title">Вітаю в консолі бронювання радіогідів</h1>
+    <div class="intro">
+        <div class="enter__side">
+            <div class="date">
+                <div>
+                    <span>початок:</span>
+                    <p>
+                        <input type="datetime-local" value="2020-07-16T12:00"  id="datetimeLocalStart"/> 
+                    </p>
+                </div>
+                <div>
+                    <span>завершення:</span>
+                    <p>
+                        <input type="datetime-local" value="2020-07-16T14:00"  id="datetimeLocalFinish"/>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <span>оберіть кількість спікерів</span>
+                <form name="amountSpeakers">
+                    <select name="amount">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                    <input id="speakers" type="button" value="обрати">
+                </form>
+            </div>
+            <div>
+                <span>вкажіть кількість слухачів</span>
+                <input id="amountParticipants" type="number" min="0" max="100" step="1" placeholder="8"/>
+            </div>
+            <div>
+                <span>локація</span>
+                <select name="city" id="city">
+                    <option value="lviv">Львів</option>
+                    <option value="kyiv">Київ</option>
+                    <option value="uzgorod">Ужгород</option>
+                </select>              
+                <select name="place" id="place"></select>
+            </div>
+        </div>
+        <div class="result__side">
+            <div class="date__start">Виберіть час та дату початку оренди</div>
+            <div class="date__finish">Виберіть час та дату закінчення оренди</div>
+            <div class="speakers">спікерів 0</div>
+            <div class="participants">учасників 0</div>
+            <div class="place">безкоштовна доставка на адресу, вибрану зі списку</div>
+            <div class="resultPrice">
+                <span>Вартість замовлення:</span>
+                <div class="price">0 UAH</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    
+        
+    <script src="/app(0).js"></script>
+    <script src="/app.js"></script>
+    
+</body>
+    
+</html>
