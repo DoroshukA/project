@@ -1,33 +1,135 @@
 body {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #312323;
+    color: #fff;
 
     background-color: #f8f5f5;
 }
-.title {
-     font-size: 35px;
-     padding: 20px 10px;
-     text-align: center;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.logo {
+    background: url(../img/bg_01.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    color: #fff;
+    padding-left: 40px;
+    padding-top: 10px;
+
+    font-family: 'Lato', sans-serif;
+}
+.logo span {
+    color: #f50d0d;
 }
 .intro {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content:space-between;
+    width: 100%;
+    height: 100vh;
+  
+    background: url(../img/bg_02.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
-.enter__side {
-    width: 50%;
-    padding: 15px 5px;
+.menu {
+    justify-content: space-between;
+    display: flex;
+}
+.menu__btn {
+    display: block;
+    content: "";
+    background:  linear-gradient(170deg, #2304008f, #81433960);
+    width: 250px;
+    height: 180px;
+
+    text-decoration: none;
+
+    position: relative;
+    opacity: 0.6;
+    text-align: center;
+    align-items: center;
+
+    border-top: 1px solid hsl(0, 30%, 39%, .4);
+    border-left: 1px solid hsl(0, 30%, 39%, .4);
+    border-right: 1px solid rgba(12, 4, 4, 0.8);
+    border-bottom: 1px solid rgba(12, 4, 4, 0.8);
+
+    transition: opacity, box-shadow, transform .1s linear, box-shadow .1s linear, opacity .2s linear;
+}
+.menu__btn:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.6);
+    opacity: .8;
+    border-top: 1px solid hsl(0, 30%, 39%, .2);
+    border-left: 1px solid hsl(0, 30%, 39%, .2);
+    border-right: 1px solid rgba(12, 4, 4, 0.4);
+    background:  linear-gradient(170deg, #2304008f, #e42e1260);
+}
+.menu__btn.active {
+    transform: translate(-1px, -1px);
+    box-shadow: 0px 0px 2px rgb(0, 0, 0, 0.6);
+    opacity: 0.4;
+
+    border-top: 1px solid rgba(12, 4, 4, 0.8);
+    border-left: 1px solid rgba(12, 4, 4, 0.8);
+    border-right: 1px solid hsl(0, 30%, 39%, .4);
+    border-bottom: 1px solid hsl(0, 30%, 39%, .4);
+    z-index: 1;
+}
+.menu__btn.active .btn__icon {
+        fill: #f50d0d;
+        opacity: 1;
+        z-index: 10;
+}
+.btn__text {
+    color: #fdfcfc;
+    position: relative;
+    font-size: 20px;
+
+}
+.title {
+     font-size: 25px;
+     text-align: center;
 }
 
-.enter__side div {
-    margin-top: 20px;
+.btn__icon {
+    width: 60px;
+    height: 60px;
+    fill:#ffffff;
+
+    margin-top: 40px;
+    
 }
+
+.resultPrice {
+    color: #ffffff;
+    align-content: center;
+}
+
 .result__side {
-    width: 50%;
-    padding: 15px 5px;
+    padding: 5px 5px;
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 20px;
 }
 .result__side div {
-    margin-top: 20px;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 .date__start,
 .date__finish,
@@ -37,3 +139,75 @@ body {
 .resultPrice {
     opacity: 0.6;
 }
+
+/*enter side*/
+
+.enter__side {
+    
+    justify-content: space-between;
+    display: flex;
+    margin:auto 15px;
+    align-items: center;
+}
+
+.datetime_start,
+.datetime_finish,
+.amountSpeakers,
+.amountParticipants,
+.location
+ {
+    display: none;
+}
+.datetime_start.active,
+.datetime_finish.active,
+.amountSpeakers.active,
+.amountParticipants.active,
+.location.active {
+    display: block;
+    margin-left: 25px;
+}
+
+.datetime_start {
+    margin-bottom: 30px;
+}
+#datetimeLocalFinish,
+#datetimeLocalStart,
+#city,
+#place,
+#amountParticipants,
+#amountSpeakers,
+#speakers
+ {
+    color: #3a0303;
+    background-color: #eee1e1;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 10px auto;
+    text-transform: uppercase;
+
+    align-content: center;
+
+    border: 1px solid #cecece;
+    border-radius: 6px;
+    outline: none;
+
+    font-weight: 700;
+    width: 100%;
+    height: 40px;
+}
+#city,
+#place {
+    width: 230px;
+}
+@media (max-width: 720px) {
+    .menu {
+        flex-wrap: wrap;
+    }
+    .menu__btn {
+        width: 30%;
+    }
+    .enter__side {
+        flex-wrap: wrap;
+    }
+}
+   
