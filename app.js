@@ -261,10 +261,14 @@ function currentDate(h) {
 
 }
 function currentDateForCity() {
-    if (day >= 22 && mon >= 09) {
-        return year + "-" + Number(mon + 1) + "-01T07:00";
-    } else if (day >= 22 && mon < 09) {
-      return year + "-0" + Number(mon + 1) + "-01T07:00";
+    if (day >= 22 && day <= 26 && mon >= 09) {
+        return year + "-" + (Number(mon) + 1) + "-01T07:00";
+    } else if (day >= 22 && day <= 26 && mon < 09) {
+      return year + "-0" + (Number(mon) + 1) + "-01T07:00";
+    } else if (day > 26 && mon >= 09) {
+      return year + "-" + (Number(mon) + 1) + "-08T07:00";
+    } else if (day > 26 && mon < 09) {
+      return year + "-0" + (Number(mon) + 1) + "-08T07:00";
     } else if (day <= 09) {
       return year + "-" + mon + "-0" + (Number(day) + 6) + "T07:00";
     } else if (day > 09) {
@@ -281,6 +285,7 @@ prime_select.addEventListener("click", function() {
     document.getElementById("datetimeLocalFinish").value = currentDateForCity();
     document.getElementById("datetimeLocalStart").min = currentDateForCity();
     document.getElementById("datetimeLocalFinish").min = currentDateForCity();
+    console.log(currentDateForCity())
   } else {
     document.getElementById("datetimeLocalStart").value = currentDate(4);
     document.getElementById("datetimeLocalStart").min = currentDate(4);
